@@ -146,7 +146,6 @@ function updateState() {
             $('.number').prop('disabled', false);
             $('.operator').prop('disabled', true);
             $('.equal').prop('disabled', false);
-
             break;
         case state.result:
             $('.number').prop('disabled', false);
