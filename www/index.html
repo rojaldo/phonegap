@@ -41,6 +41,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+
     <title>Hello World</title>
 
 </head>
@@ -50,32 +51,33 @@
         <h1 id="display"></h1>
         <table style="width:100%">
             <tr>
-                <td><button onclick="insertNumber(7)">7</button></td>
-                <td><button onclick="insertNumber(8)">8</button></td>
-                <td><button onclick="insertNumber(9)">9</button></td>
-                <td><button onclick="insertSymbol('/')">/</button></td>
+                <td><button class="number" onclick="insertNumber(7)">7</button></td>
+                <td><button class="number" onclick="insertNumber(8)">8</button></td>
+                <td><button class="number" onclick="insertNumber(9)">9</button></td>
+                <td><button class="operator" onclick="insertSymbol('/')">/</button></td>
             </tr>
             <tr>
-                <td><button onclick="insertNumber(4)">4</button></td>
-                <td><button onclick="insertNumber(5)">5</button></td>
-                <td><button onclick="insertNumber(6)">6</button></td>
-                <td><button onclick="insertSymbol('*')">x</button></td>
+                <td><button class="number" onclick="insertNumber(4)">4</button></td>
+                <td><button class="number" onclick="insertNumber(5)">5</button></td>
+                <td><button class="number" onclick="insertNumber(6)">6</button></td>
+                <td><button class="operator" onclick="insertSymbol('*')">x</button></td>
             </tr>
             <tr>
-                <td><button onclick="insertNumber(1)">1</button></td>
-                <td><button onclick="insertNumber(2)">2</button></td>
-                <td><button onclick="insertNumber(3)">3</button></td>
-                <td><button onclick="insertSymbol('-')">-</button></td>
+                <td><button class="number" onclick="insertNumber(1)">1</button></td>
+                <td><button class="number" onclick="insertNumber(2)">2</button></td>
+                <td><button class="number" onclick="insertNumber(3)">3</button></td>
+                <td><button class="operator" onclick="insertSymbol('-')">-</button></td>
             </tr>
             <tr>
-                <td><button onclick="insertSymbol(',')">,</button></td>
-                <td><button onclick="insertNumber(0)">0</button></td>
-                <td><button onclick="insertSymbol('=')">=</button></td>
-                <td><button onclick="insertSymbol('+')">+</button></td>
+                <td><button class="number" onclick="insertSymbol(',')">,</button></td>
+                <td><button class="number" onclick="insertNumber(0)">0</button></td>
+                <td><button class="equal" onclick="insertSymbol('=')">=</button></td>
+                <td><button class="operator" onclick="insertSymbol('+')">+</button></td>
             </tr>
         </table>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">

@@ -34,6 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        $(document).ready(function () {
+            console.log("ready!");
+            $('.number').prop('disabled', false);
+            $('.operator').prop('disabled', true);
+            $('.equal').prop('disabled', true);
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -59,8 +65,9 @@ function insertNumber(value) {
     switch (currentState) {
         case state.init:
             firstFigure = value;
-            updateDisplay(value)
+            updateDisplay(value);
             currentState = state.firstFigure;
+            updateState()
             break;
         case state.firstFigure:
             firstFigure = firstFigure * 10 + value;
@@ -76,6 +83,7 @@ function insertNumber(value) {
             firstFigure = value;
             updateDisplay(value);
             currentState = state.firstFigure;
+            updateState()
             break;
 
         default:
@@ -92,6 +100,7 @@ function insertSymbol(value) {
             if (isOpertor(value)) {
                 operator = value;
                 currentState = state.secondFigure;
+                updateState()
                 updateDisplay(value)
             }
             break;
@@ -100,6 +109,7 @@ function insertSymbol(value) {
                 doOperation();
                 updateDisplay(value + result)
                 currentState = state.result;
+                updateState()
             }
             break;
         case state.result:
@@ -110,6 +120,7 @@ function insertSymbol(value) {
             clearDisplay();
             updateDisplay(firstFigure + value);
             currentState = state.secondFigure;
+            updateState()
             break;
 
         default:
@@ -118,14 +129,43 @@ function insertSymbol(value) {
     }
 }
 
+function updateState() {
+    switch (currentState) {
+        case state.init:
+            $('.number').prop('disabled', false);
+            $('.operator').prop('disabled', false);
+            $('.equal').prop('disabled', true);
+            break;
+        case state.firstFigure:
+            $('.number').prop('disabled', false);
+            $('.operator').prop('disabled', false);
+            $('.equal').prop('disabled', true);
+
+            break;
+        case state.secondFigure:
+            $('.number').prop('disabled', false);
+            $('.operator').prop('disabled', true);
+            $('.equal').prop('disabled', false);
+
+            break;
+        case state.result:
+            $('.number').prop('disabled', false);
+            $('.operator').prop('disabled', false);
+            $('.equal').prop('disabled', true);
+            break;
+        default:
+            break;
+    }
+}
+
 function updateDisplay(value) {
-    let display = document.getElementById('display');
-    display.innerHTML = display.innerHTML + value
+    console.log('updateDisplay');
+    $('#display').html($('#display').html() + value);
 }
 
 function clearDisplay() {
-    let display = document.getElementById('display');
-    display.innerHTML = ''    
+
+    $('#display').html('');
 }
 
 function removeValues() {
