@@ -29,7 +29,7 @@
         content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+        content="" />
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -40,82 +40,29 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
 
     <title>Hello World</title>
 
 </head>
 
 <body>
-    <div class="app container">
+    <div class="app">
+        <div data-role="page">
+            <div data-role="header">Curso de PHonegap</div>
+            <div role="main" class="ui-content">Aquí va el contenido
 
-        <div class="row">
+                <ul data-role="listview">
+                    <li><a href="pages/calculator/calculator.html">Calculadora</a></li>
+                    <li><a href="pages/heroes/heroes.html">Calculadora</a></li>
 
-            <div class="col">
-
+                </ul>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                <h1 id="display"></h1>
-                <div class="container">
-                    <table style="width:100%">
-                        <tr>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(7)">7</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(8)">8</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(9)">9</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block operator"
-                                    onclick="insertSymbol('/')">/</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(4)">4</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(5)">5</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(6)">6</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block operator"
-                                    onclick="insertSymbol('*')">x</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(1)">1</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(2)">2</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(3)">3</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block operator"
-                                    onclick="insertSymbol('-')">-</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertSymbol(',')">,</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block number" onclick="insertNumber(0)">0</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block equal" onclick="insertSymbol('=')">=</button>
-                            </td>
-                            <td><button class="btn btn-primary btn-block operator"
-                                    onclick="insertSymbol('+')">+</button></td>
-                        </tr>
-                    </table>
-
-                </div>
-                <div class="col">
-
-                </div>
-
-            </div>
-
-
+            <div data-role="footer">Esto es un Footer</div>
         </div>
-
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
