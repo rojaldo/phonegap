@@ -24,7 +24,16 @@ function filterBeers() {
     $.each(beers.filter((element) => {
         return (element.abv >= min && element.abv <= max)
     }), (beerIndex, beer) => {
-        $("#beerslist").append('<li class="ui-first-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">' +
-            beerIndex + ' - ' + beer.name + ': ' + beer.abv + 'º' + '</a></li>');
+        $("#beerslist").append(`<div data-role="collapsible"
+        class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-first-child">
+        <h3 class="ui-collapsible-heading"><a href="#"
+                class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-a ui-icon-minus">`+beer.name+`<span
+                    class="ui-collapsible-heading-status"> click to collapse contents</span></a></h3>
+        <div class="ui-collapsible-content ui-body-a" aria-hidden="false">
+    
+            <p>`+beer.description+`</p>
+        </div>
+    </div>`);
     });
 }
+

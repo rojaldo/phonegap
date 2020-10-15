@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <form>
         <div data-role="rangeslider" onchange="checkCahnge()">
             <label for="range-1a">Rangeslider:</label>
@@ -14,10 +17,11 @@
             <input type="range" name="range-1b" id="range-1b" min="0" max="50" step=".1" value="5">
         </div>
     </form>
-    <ul data-role="listview" id="beerslist">
+    <div data-role="collapsibleset" data-theme="a" data-content-theme="a" id="beerslist" class="ui-collapsible-set ui-group-theme-a ui-corner-all">
 
-    </ul>
+    </div>
     <script type="text/javascript" src="beers.js"></script>
-
 </body>
+
 </html>
+
